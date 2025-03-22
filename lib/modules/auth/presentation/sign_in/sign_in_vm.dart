@@ -7,7 +7,7 @@ class SignInVM extends ChangeNotifier {
 
   bool get isLoading => _isLoading;
 
-  bool _showPassword = true;
+  bool _showPassword = false;
 
   bool get showPassword => _showPassword;
 

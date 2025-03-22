@@ -1,8 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:test_mdc/core/route_name.dart';
 import 'package:test_mdc/modules/auth/data/repositories/auth_repository_impl.dart';
-import 'package:test_mdc/modules/auth/presentation/forgot_password_page.dart';
-import 'package:test_mdc/modules/auth/presentation/new_password_page.dart';
+import 'package:test_mdc/modules/auth/presentation/create_new_password/new_password_vm.dart';
+import 'package:test_mdc/modules/auth/presentation/forgot_password/forgot_password_page.dart';
+import 'package:test_mdc/modules/auth/presentation/forgot_password/forgot_password_vm.dart';
+import 'package:test_mdc/modules/auth/presentation/create_new_password/new_password_page.dart';
 import 'package:test_mdc/modules/auth/presentation/password_change_done_page.dart';
 import 'package:test_mdc/modules/auth/presentation/phone_verification.dart';
 import 'package:test_mdc/modules/auth/presentation/sign_in/sign_in_page.dart';
@@ -18,6 +20,8 @@ class AppModule extends Module {
     i.add(AuthRepositoryImpl.new);
     i.add(SignInVM.new);
     i.add(SignUpVM.new);
+    i.add(ForgotPasswordVM.new);
+    i.add(NewPasswordVM.new);
   }
 
   @override

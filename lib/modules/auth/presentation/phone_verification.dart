@@ -45,6 +45,7 @@ class PhoneVerification extends StatelessWidget {
   }
 
   Widget _buildInput() {
+    final email = Modular.args.data as String?;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -54,7 +55,7 @@ class PhoneVerification extends StatelessWidget {
         ),
         SizedBox(height: 8),
         Text(
-          'We have sent it on your email \nkadrun@gmail.com',
+          'We have sent it on your email \n${email ?? 'kadrun@gmail.com'}',
           style: AppTextStyle.subheader.copyWith(color: AppColors.subtitle),
         ),
         SizedBox(height: 24),

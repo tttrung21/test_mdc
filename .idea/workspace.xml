@@ -49,10 +49,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codeflutter\test_mdc\lib\modules\auth\presentation\create_new_password" />
+      <recent name="D:\codeflutter\test_mdc\lib\modules\auth\presentation\forgot_password" />
       <recent name="D:\codeflutter\test_mdc\lib\modules\auth\presentation\sign_up" />
       <recent name="D:\codeflutter\test_mdc\lib\modules\auth\presentation\sign_in" />
       <recent name="D:\codeflutter\test_mdc\lib" />
-      <recent name="D:\codeflutter\test_mdc\assets" />
     </key>
   </component>
   <component name="RunManager">

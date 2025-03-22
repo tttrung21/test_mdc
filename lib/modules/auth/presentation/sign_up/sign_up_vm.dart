@@ -8,7 +8,7 @@ class SignUpVM extends ChangeNotifier {
 
   bool get isLoading => _isLoading;
 
-  bool _showPassword = true;
+  bool _showPassword = false;
 
   bool _isAgreeTerm = false;
 
