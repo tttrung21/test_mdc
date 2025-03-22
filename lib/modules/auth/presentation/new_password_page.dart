@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:test_mdc/core/app_colors.dart';
+import 'package:test_mdc/core/app_text_style.dart';
 import 'package:test_mdc/core/route_name.dart';
 import 'package:test_mdc/modules/auth/presentation/widgets/app_text_field.dart';
 import 'package:test_mdc/widgets/app_button.dart';
+import 'package:test_mdc/widgets/appbar_no_background.dart';
 
 class NewPasswordPage extends StatelessWidget {
   NewPasswordPage({super.key});
@@ -22,45 +24,9 @@ class NewPasswordPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            SizedBox(
-              height: 60,
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  return Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30)),
-                        child: ColoredBox(
-                          color: AppColors.white,
-                          child: SizedBox(
-                            height: 60,
-                            width: double.infinity,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: constraints.maxHeight * 0.55,
-                        left: 24,
-                        right: 24,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InkWell(
-                              onTap: Modular.to.pop,
-                              child: Icon(Icons.chevron_left),
-                            ),
-                            Text('New Password'),
-                            InkWell(
-                              onTap: () {},
-                              child: Icon(Icons.close),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
+            AppbarNoBackground(
+              title: 'New Password',
+              backTap: Modular.to.pop,
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -75,7 +41,7 @@ class NewPasswordPage extends StatelessWidget {
           child: AppButton(
               buttonText: 'I Agree Term and Condition',
               onPress: () {
-                if(passwordTEC.text.isNotEmpty) {
+                if (passwordTEC.text.isNotEmpty) {
                   passwordTEC.clear();
                   Modular.to.pushNamed(RouteName.pwChangeDone);
                 }
@@ -98,16 +64,22 @@ class NewPasswordPage extends StatelessWidget {
       ],
     );
   }
+
   Widget _buildInput() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Create a new password'),
+        Text(
+          'Create a new password',
+          style: AppTextStyle.header,
+        ),
         SizedBox(height: 16),
-        Text('Create strong and secure password that protect your account'),
+        Text(
+          'Create strong and secure password that protect your account',
+          style: AppTextStyle.subheader.copyWith(color: AppColors.subtitle),
+        ),
         SizedBox(height: 16),
-        AppTextField(
-            title: 'Password', placeholder: '', controller: passwordTEC, isShowSuffix: false),
+        AppTextField(title: 'Password', placeholder: '', controller: passwordTEC, isShowSuffix: false),
         SizedBox(height: 40),
         Row(
           children: [
@@ -115,13 +87,15 @@ class NewPasswordPage extends StatelessWidget {
               Icons.check_circle,
               color: Colors.green,
             ),
-            SizedBox(width: 16,),
+            SizedBox(
+              width: 16,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Text(
                   'At least 8 symbols',
-                  style: TextStyle(color: AppColors.subtitle),
+                  style: AppTextStyle.title2.copyWith(color: AppColors.subtitle),
                   softWrap: true,
                 ),
               ),
@@ -135,13 +109,15 @@ class NewPasswordPage extends StatelessWidget {
               Icons.check_circle,
               color: Colors.green,
             ),
-            SizedBox(width: 16,),
+            SizedBox(
+              width: 16,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Text(
                   'Contain at least one number',
-                  style: TextStyle(color: AppColors.subtitle),
+                  style: AppTextStyle.title2.copyWith(color: AppColors.subtitle),
                   softWrap: true,
                 ),
               ),
@@ -151,5 +127,4 @@ class NewPasswordPage extends StatelessWidget {
       ],
     );
   }
-
 }

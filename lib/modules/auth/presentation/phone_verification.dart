@@ -21,7 +21,7 @@ class PhoneVerification extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DefaultAppbar(title: 'Phone Verification'),
+            DefaultAppbar(title: 'Phone Verification',backTap: Modular.to.pop,),
             Expanded(
               child: SingleChildScrollView(
                 child: Stack(
@@ -78,7 +78,10 @@ class PhoneVerification extends StatelessWidget {
         fontSize: 24,
         color: AppColors.primaryColor,
       ),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: AppColors.white),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        color: AppColors.white,
+      ),
     );
     return Row(
       children: [
@@ -89,10 +92,6 @@ class PhoneVerification extends StatelessWidget {
             controller: pinputTEC,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             onChanged: (value) async {
-              // if (value.isNotEmpty) {
-              //   final maskedValue = List.generate(value.length - 1, (_) => '•').join() + value[value.length - 1];
-              //   pinputTEC.text = maskedValue;
-              // }
               if (value.isEmpty) return;
               if (value.length == 4) {
                 await Future.delayed(Duration(seconds: 1));

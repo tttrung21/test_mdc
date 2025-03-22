@@ -12,4 +12,6 @@ class AppTextStyle {
   static TextStyle title1 = roboto.copyWith(fontSize: 15, fontWeight: FontWeight.w400);
   static TextStyle title2 = roboto.copyWith(fontSize: 13, fontWeight: FontWeight.w400);
   static TextStyle button = roboto.copyWith(fontSize: 15, fontWeight: FontWeight.w700);
+  static TextStyle typo = roboto.copyWith(fontSize: 17, fontWeight: FontWeight.w500);
+
 }

@@ -4,6 +4,7 @@ import 'package:test_mdc/core/app_colors.dart';
 import 'package:test_mdc/core/app_text_style.dart';
 import 'package:test_mdc/core/route_name.dart';
 import 'package:test_mdc/widgets/app_button.dart';
+import 'package:test_mdc/widgets/appbar_no_background.dart';
 
 class TermServicePage extends StatelessWidget {
   const TermServicePage({super.key});
@@ -17,48 +18,8 @@ class TermServicePage extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 30,
-            ),
-            SizedBox(
-              height: 60,
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  return Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30)),
-                        child: ColoredBox(
-                          color: AppColors.white,
-                          child: SizedBox(
-                            height: 60,
-                            width: double.infinity,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: constraints.maxHeight * 0.55,
-                        left: 24,
-                        right: 24,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InkWell(
-                              onTap: Modular.to.pop,
-                              child: Icon(Icons.chevron_left),
-                            ),
-                            InkWell(
-                              onTap: () {},
-                              child: Icon(Icons.close),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ),
+            SizedBox(height: 30,),
+            AppbarNoBackground(backTap: Modular.to.pop,),
             Expanded(
               child: SingleChildScrollView(
                 child: _buildBody(),
@@ -87,7 +48,7 @@ class TermServicePage extends StatelessWidget {
           color: AppColors.bgColor,
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'General Term of service',
@@ -99,18 +60,18 @@ class TermServicePage extends StatelessWidget {
                   style: AppTextStyle.title.copyWith(color: AppColors.subtitle),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(52, 30, 52, 26),
-                  child: Text('“Running macOS and Windows 10 on the Same Computer“'),
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(52, 30, 52, 26),
-                  child: RichText(text: TextSpan(children: [
-                    TextSpan(text: '“'),
-                    TextSpan(text: 'Running macOS and Windows 10 on the Same Computerc')
+                  padding: EdgeInsets.fromLTRB(32, 30, 32, 26),
+                  child: RichText(
+                      text: TextSpan(children: [
+                    TextSpan(text: '“', style: AppTextStyle.typo.copyWith(fontSize: 27,color: AppColors.subtitle)),
+                    TextSpan(text: 'Running macOS and Windows 10 on the Same Computer', style: AppTextStyle.typo.copyWith(color: AppColors.subtitle)),
+                    TextSpan(text: '“', style: AppTextStyle.typo.copyWith(fontSize: 27,color: AppColors.subtitle)),
                   ])),
                 ),
                 Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend nulla non placerat placerat. Aliquam suscipit ante ut tortor suscipit gravida. Aliquam erat volutpat. Fusce aliquet molestie dolor, vitae lacinia nisi mollis ut. Aliquam erat volutpat. Cras erat augue, gravida a pellentesque sit amet, ultrices at lacus. Donec pretium mollis sapien et ornare. Ut ultricies tellus at tortor hendrerit, quis dictum mi hendrerit. Proin vel consequat dolor, iaculis scelerisque ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse tincidunt, erat sed dictum vulputate, justo augue rhoncus justo, vitae vulputate elit mi ut arcu. Etiam ac imperdiet mi, id sodales lectus. Nunc viverra odio et semper semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse tincidunt, erat sed dictum vulputate, justo augue rhoncus justo, vitae vulputate elit mi ut arcu. Etiam ac imperdiet mi, id sodales lectus. Nunc viverra odio et semper semper.'),
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend nulla non placerat placerat. Aliquam suscipit ante ut tortor suscipit gravida. Aliquam erat volutpat. Fusce aliquet molestie dolor, vitae lacinia nisi mollis ut. Aliquam erat volutpat. Cras erat augue, gravida a pellentesque sit amet, ultrices at lacus. Donec pretium mollis sapien et ornare. Ut ultricies tellus at tortor hendrerit, quis dictum mi hendrerit. Proin vel consequat dolor, iaculis scelerisque ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse tincidunt, erat sed dictum vulputate, justo augue rhoncus justo, vitae vulputate elit mi ut arcu. Etiam ac imperdiet mi, id sodales lectus. Nunc viverra odio et semper semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse tincidunt, erat sed dictum vulputate, justo augue rhoncus justo, vitae vulputate elit mi ut arcu. Etiam ac imperdiet mi, id sodales lectus. Nunc viverra odio et semper semper.',
+                  style: AppTextStyle.title.copyWith(color: AppColors.subtitle),
+                ),
               ],
             ),
           ),
