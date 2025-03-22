@@ -1,0 +1,1 @@
+ D:\\codeflutter\\test_mdc\\.dart_tool\\flutter_build\\731530f45e68419b57819a276668a5bf\\native_assets.yaml: 
