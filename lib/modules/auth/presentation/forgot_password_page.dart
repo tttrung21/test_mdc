@@ -71,7 +71,7 @@ class ForgotPasswordPage extends StatelessWidget {
           style: AppTextStyle.subheader.copyWith(color: AppColors.subtitle),
         ),
         SizedBox(height: 40),
-        AppTextField(title: 'Email Address', placeholder: 'Email', controller: emailTEC, isShowSuffix: false),
+        AppTextField(title: 'Email Address', placeholder: 'Email', controller: emailTEC, isShowSuffix: false, onChanged: (value ) {  },),
       ],
     );
   }

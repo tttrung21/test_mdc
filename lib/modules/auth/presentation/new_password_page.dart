@@ -79,7 +79,7 @@ class NewPasswordPage extends StatelessWidget {
           style: AppTextStyle.subheader.copyWith(color: AppColors.subtitle),
         ),
         SizedBox(height: 16),
-        AppTextField(title: 'Password', placeholder: '', controller: passwordTEC, isShowSuffix: false),
+        AppTextField(title: 'Password', placeholder: '', controller: passwordTEC, isShowSuffix: false, onChanged: (value ) {  },),
         SizedBox(height: 40),
         Row(
           children: [

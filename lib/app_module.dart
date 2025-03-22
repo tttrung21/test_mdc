@@ -5,8 +5,10 @@ import 'package:test_mdc/modules/auth/presentation/forgot_password_page.dart';
 import 'package:test_mdc/modules/auth/presentation/new_password_page.dart';
 import 'package:test_mdc/modules/auth/presentation/password_change_done_page.dart';
 import 'package:test_mdc/modules/auth/presentation/phone_verification.dart';
-import 'package:test_mdc/modules/auth/presentation/sign_in_page.dart';
-import 'package:test_mdc/modules/auth/presentation/sign_up_page.dart';
+import 'package:test_mdc/modules/auth/presentation/sign_in/sign_in_page.dart';
+import 'package:test_mdc/modules/auth/presentation/sign_in/sign_in_vm.dart';
+import 'package:test_mdc/modules/auth/presentation/sign_up/sign_up_page.dart';
+import 'package:test_mdc/modules/auth/presentation/sign_up/sign_up_vm.dart';
 import 'package:test_mdc/modules/auth/presentation/term_service_page.dart';
 
 class AppModule extends Module {
@@ -14,6 +16,8 @@ class AppModule extends Module {
   @override
   void binds(Injector i) {
     i.add(AuthRepositoryImpl.new);
+    i.add(SignInVM.new);
+    i.add(SignUpVM.new);
   }
 
   @override
